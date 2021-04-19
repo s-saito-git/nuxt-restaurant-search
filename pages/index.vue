@@ -16,7 +16,6 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
@@ -36,15 +35,18 @@ export default {
     }
   },
   mounted() {
-    this.$axios('http://localhost:3000/api/gourmet/v1/', {
-      //パラメーターの設定
-      params: {
-        key: process.env.API_KEY,
-        lat: '35.681236',
-        lng: '139.767125',
-        format: 'json'
-      }
-    }).then(this.setShop).catch(this.setError)
+    navigator.geolocation.getCurrentPosition((position) => {
+      //APIからデータを取得
+      this.$axios('http://localhost:3000/api/gourmet/v1/', {
+        //パラメーターの設定
+        params: {
+          key: process.env.API_KEY,
+          lat: position.coords.latitude,//取得した緯度を設定
+          lng: position.coords.longitude,//取得した軽度を設定
+          format: 'json'
+        }
+      }).then(this.setShop).catch(this.setError)
+    },this.setError)
   }
 }
 </script>
