@@ -1,0 +1,2 @@
+# nuxt-restaurant-search
+リクルートWEBサービスのホットペッパーAPIを利用したシンプルなお店検索アプリ
