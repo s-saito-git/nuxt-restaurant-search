@@ -1,3 +1,6 @@
+require('dotenv').config();
+const { API_KEY } = process.env;
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -39,5 +42,20 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api': {
+      target: 'http://webservice.recruit.co.jp/hotpepper',
+      pathRewrite: { '^/api': '' } 
+    }
+  },
+  modules: [
+    '@nuxtjs/axios',
+  ],
+  env: {
+    API_KEY
   }
 }
