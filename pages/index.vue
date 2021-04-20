@@ -5,7 +5,11 @@
     </h2>
     <p v-if="error">データの取得に失敗しました</p>
     <ul>
-      <li v-for="shop in shops" :key="shop.id">
+      <li
+        v-for="shop in shops"
+        :key="shop.id"
+        @click="$router.push(`/${shop.id}`)"
+      >
         <img :src="shop.photo.pc.l">
         <p>{{ shop.id }}</p>
         <p>{{ shop.name }}</p>
