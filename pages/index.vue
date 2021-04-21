@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <h2>
+  <div class="main-contents">
+    <p>
       検索結果（{{ shops.length }}件）
-    </h2>
+    </p>
     <p v-if="error">データの取得に失敗しました</p>
     <ul>
       <li
@@ -63,6 +63,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>
