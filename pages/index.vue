@@ -15,12 +15,24 @@
           <img class="restaurant-list__img" :src="shop.photo.pc.l">
         </div>
         <div>
-          <h2 class="restaurant-list__shop-name">{{ shop.name }}</h2>
-          <span class="restaurant-list__genre">{{ shop.genre.name }}</span>
-          <p class="restaurant-list__catch">{{ shop.genre.catch }}</p>
-          <p class="restaurant-list__station">{{ shop.station_name }}</p>
-          <p class="restaurant-list__close">{{ shop.close }}</p>
-          <p class="restaurant-list__budget">{{ shop.budget.average }}</p>
+          <h2 class="restaurant-list__shop-name">
+            {{ shop.name }}
+          </h2>
+          <span class="restaurant-list__genre">
+            {{ shop.genre.name }}
+          </span>
+          <p class="restaurant-list__catch">
+            {{ shop.genre.catch }}
+          </p>
+          <p class="restaurant-list__station">
+            {{ shop.station_name }}
+          </p>
+          <p class="restaurant-list__close">
+            {{ shop.close }}
+          </p>
+          <p class="restaurant-list__budget">
+            {{ shop.budget.average }}
+          </p>
         </div>
       </li>
     </ul>

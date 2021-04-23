@@ -10,6 +10,9 @@ body {
 ul, li {
   list-style: none;
 }
+.mt32 {
+  margin-top: 3.2rem;
+}
 .main-contents {
   width: 108rem;
   margin: 0 auto;
@@ -106,5 +109,110 @@ ul, li {
       background-repeat: no-repeat;
       vertical-align: -0.2rem;
     }
+  }
+}
+.restaurant-detail {
+  width: 64rem;
+  margin: 3.2rem auto;
+
+  &__shop-name {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+  &__genre {
+    color: $color-white;
+    background-color: $color-main;
+    padding: 0.4rem 0.8rem;
+    margin-top: 0.8rem;
+    border-radius: 2rem;
+  }
+  &__img-wrap {
+    width: 64rem;
+    height: 36rem;
+    margin: 1.6rem 0rem;
+  }
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.6rem;
+  }
+  &__catch {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3.2rem;
+  }
+}
+.coupon {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  &__url {
+    width: calc(100% - 124px);
+    background-color: $color-border;
+    padding: 0.8rem 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+  &__button {
+    display: block;
+    background-color: $color-main;
+    padding: 0.8rem 1rem;
+    border: none;
+    text-decoration: none;
+    color: $color-white;
+    font-weight: 700;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+}
+.restaurant-info-table {
+  display: flex;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  align-items: stretch;
+  padding: 0.8rem 1.6rem;
+  border: 0.1rem solid $color-border;
+  border-radius: 1.6rem;
+  background-color: #fafafa;
+
+  &__title {
+    width: 18rem;
+    box-sizing: border-box;
+    padding: 1.6rem 0.8rem;
+    font-weight: 700;
+
+    &:not(:last-of-type) {
+      border-bottom: 0.1rem solid $color-border;
+    }
+  }
+  &__body {
+    box-sizing: border-box;
+    padding: 1.6rem 0.8rem;
+    width: calc(100% - 180px);
+    
+    &:not(:last-of-type) {
+      border-bottom: 0.1rem solid $color-border;
+    }
+  }
+}
+.back-button {
+  width: 100%;
+  height: 4.8rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  color: $color-main;
+  background-color: $color-white;
+  border: solid 0.1rem $color-main;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-main;
+    transition: 0.4s;
   }
 }
