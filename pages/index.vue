@@ -1,19 +1,27 @@
 <template>
   <div class="main-contents">
-    <p>
+    <p class="search-result">
       検索結果（{{ shops.length }}件）
     </p>
     <p v-if="error">データの取得に失敗しました</p>
-    <ul>
+    <ul class="restaurant-list">
       <li
         v-for="shop in shops"
         :key="shop.id"
         @click="$router.push(`/${shop.id}`)"
+        class="restaurant-list__item"
       >
-        <img :src="shop.photo.pc.l">
-        <p>{{ shop.id }}</p>
-        <p>{{ shop.name }}</p>
-        <p>{{ shop.address }}</p>
+        <div class="restaurant-list__img-wrap">
+          <img class="restaurant-list__img" :src="shop.photo.pc.l">
+        </div>
+        <div>
+          <h2 class="restaurant-list__shop-name">{{ shop.name }}</h2>
+          <span class="restaurant-list__genre">{{ shop.genre.name }}</span>
+          <p class="restaurant-list__catch">{{ shop.genre.catch }}</p>
+          <p class="restaurant-list__station">{{ shop.station_name }}</p>
+          <p class="restaurant-list__close">{{ shop.close }}</p>
+          <p class="restaurant-list__budget">{{ shop.budget.average }}</p>
+        </div>
       </li>
     </ul>
   </div>
