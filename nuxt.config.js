@@ -58,5 +58,8 @@ export default {
   ],
   env: {
     API_KEY
+  },
+  server: {
+    host: '0.0.0.0'
   }
 }
