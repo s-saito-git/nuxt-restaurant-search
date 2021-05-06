@@ -9,9 +9,6 @@ body {
   line-height: 1.5;
   color: $color-text;
 }
-main {
-  margin-top: 10rem;
-}
 ul, li {
   list-style: none;
 }
@@ -41,6 +38,30 @@ ul, li {
   &__logo-img {
     width: 24rem;
     display: block;
+  }
+}
+.mv {
+  min-height: 48rem;
+  width: 100%;
+  background-image: url(assets/img/mv.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 8rem 0;
+
+  &__catch {
+    text-align: center;
+    margin: 0 auto;
+    padding-top : 16rem;
+  }
+  &__heading {
+    font-size: 6.4rem;
+    font-weight: 700;
+    color: #151515;
+  }
+  &__text {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #151515;
   }
 }
 .main-contents {
@@ -142,7 +163,7 @@ ul, li {
 }
 .restaurant-detail {
   width: 64rem;
-  margin: 3.2rem auto;
+  margin: 10rem auto;
 
   &__shop-name {
     font-size: 2.4rem;

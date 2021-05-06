@@ -1,41 +1,53 @@
 <template>
-  <div class="main-contents">
-    <p class="search-result">
-      検索結果（{{ shops.length }}件）
-    </p>
-    <p v-if="error">データの取得に失敗しました</p>
-    <ul class="restaurant-list">
-      <li
-        v-for="shop in shops"
-        :key="shop.id"
-        @click="$router.push(`/${shop.id}`)"
-        class="restaurant-list__item"
-      >
-        <div class="restaurant-list__img-wrap">
-          <img class="restaurant-list__img" :src="shop.photo.pc.l">
-        </div>
-        <div>
-          <h2 class="restaurant-list__shop-name">
-            {{ shop.name }}
-          </h2>
-          <span class="restaurant-list__genre">
-            {{ shop.genre.name }}
-          </span>
-          <p class="restaurant-list__catch">
-            {{ shop.genre.catch }}
-          </p>
-          <p class="restaurant-list__station">
-            {{ shop.station_name }}
-          </p>
-          <p class="restaurant-list__close">
-            {{ shop.close }}
-          </p>
-          <p class="restaurant-list__budget">
-            {{ shop.budget.average }}
-          </p>
-        </div>
-      </li>
-    </ul>
+  <div>
+    <div class="mv">
+      <div class="mv__catch">
+        <h2 class="mv__heading">
+          RESTAURANT SEARCH
+        </h2>
+        <p class="mv__text">
+          近くのお店を検索できます
+        </p>
+      </div>
+    </div>
+    <div class="main-contents">
+      <p class="search-result">
+        検索結果（{{ shops.length }}件）
+      </p>
+      <p v-if="error">データの取得に失敗しました</p>
+      <ul class="restaurant-list">
+        <li
+          v-for="shop in shops"
+          :key="shop.id"
+          @click="$router.push(`/${shop.id}`)"
+          class="restaurant-list__item"
+        >
+          <div class="restaurant-list__img-wrap">
+            <img class="restaurant-list__img" :src="shop.photo.pc.l">
+          </div>
+          <div>
+            <h2 class="restaurant-list__shop-name">
+              {{ shop.name }}
+            </h2>
+            <span class="restaurant-list__genre">
+              {{ shop.genre.name }}
+            </span>
+            <p class="restaurant-list__catch">
+              {{ shop.genre.catch }}
+            </p>
+            <p class="restaurant-list__station">
+              {{ shop.station_name }}
+            </p>
+            <p class="restaurant-list__close">
+              {{ shop.close }}
+            </p>
+            <p class="restaurant-list__budget">
+              {{ shop.budget.average }}
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
